@@ -1,5 +1,10 @@
+//this program implements the quicksort algorithm
+
 #include<iostream>
-using namespace std;
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 void quickSort(int a[], int size)
 {
@@ -47,13 +52,33 @@ void quickSort(int a[], int size)
 		a[j] = right[ri];
 		j++;
 	}
+   delete [] left;
+   delete [] right;
 
 
 }
 
-void main()
+int main()
 {
-	int A[] = {123,341254,124234,23,2,46,45,45,63,6,6,1,256,345,34,456,43,6345};
-	quickSort(A,18);
-
+	int A[] = {10, 25, 11, 99 , 42, 27, 76, 81, 10, 24, 11, 98, 90, 17, 34, 45,43, 63};
+	
+   cout << "Unsorted:\n{";
+   for(int i = 0; i < 18; i++)
+   {
+      cout << A[i] << " ";
+   }
+   cout << '}' << endl << endl;
+   
+   cout << "Sorting...\n\n";
+   quickSort(A,18);
+   
+   cout << "Sorted:\n{";
+   for(int i = 0; i < 18; i++)
+   {
+      cout << A[i] << " ";
+   }
+   cout << '}' << endl;
+   
+   cin.get();
+   return 0;
 }

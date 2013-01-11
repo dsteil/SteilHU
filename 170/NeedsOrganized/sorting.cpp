@@ -1,8 +1,13 @@
+//this program compares the efficiency of
+// the selection sort and bubble sort algorithms
 
 #include<iostream>
+#include<cstdlib>
 #include<time.h>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 const int SIZE = 70000;
 
@@ -53,7 +58,7 @@ void initializeList( int a[] )
 	}
 }
 
-void main()
+int main()
 {
 	int a[SIZE];
 	srand( time(0));
@@ -70,4 +75,6 @@ void main()
 	stopTime = time(0);
 	cout << "Bubble sort took " << stopTime - startTime << endl;
 
+   cin.get();
+   return 0;
 }

@@ -1,10 +1,12 @@
-//random sort
-//Dana Steil
-//Fall 2006
-#include <iostream>
-#include <math.h>
+// this program implements the random sort algorithm
 
-using namespace std;
+#include <iostream>
+#include <cstdlib>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
 const int SIZE = 10;
 
 void displayList(int list[])
@@ -52,7 +54,7 @@ void mixUpList(int list[])
 	}
 }
 
-void main()
+int main()
 {
 	int list[SIZE] = {22,33,12,3245,67,234,23,2,455,234};
 
@@ -62,6 +64,9 @@ void main()
 		mixUpList(list);
 	}
 	displayList(list);
+   
+   cin.get();
+   return 0;
 }
 
 

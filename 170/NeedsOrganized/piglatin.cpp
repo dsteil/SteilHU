@@ -1,20 +1,30 @@
+//this program receives a string from  the user and
+// translates it into pig latin.
+
 #include<iostream>
-using namespace std;
+#include<cstring>
+
+using std::cout;
+using std::cin;
+using std::endl;
  
-void TranslateToPigLatin(char Phrase[]);
+void translateToPigLatin(char phrase[]);
 const int MAX_PHRASE_LENGTH = 1000;
 const int MAX_WORD_LENGTH = 100;
- 
-void main()
+
+int main()
 {
-      char Phrase[MAX_PHRASE_LENGTH];
+   char phrase[MAX_PHRASE_LENGTH];
      
-      cout << "Please enter a phrase to be translated to Pig Latin:" << endl;
-      cin.getline(Phrase, MAX_PHRASE_LENGTH);
- 
-      TranslateToPigLatin(Phrase);
- 
-      cout << Phrase << endl;
+   cout << "Please enter a phrase to be translated to Pig Latin:" << endl;
+   cin.getline(phrase, MAX_PHRASE_LENGTH);
+     
+    
+   translateToPigLatin(phrase);
+	  
+   cout << phrase << endl;
+	cin.get();
+	return 0;
 }
 
 bool isVowel(char c)
@@ -28,7 +38,7 @@ bool isVowel(char c)
 	return result;
 }
 
-int CountLeadingConsonants(char Word[])
+int countLeadingConsonants(char Word[])
 {
 	int result = 0;
 
@@ -40,7 +50,7 @@ int CountLeadingConsonants(char Word[])
 	return result;
 }
 
-void TranslateWordToPigLatin(char Word[])
+void translateWordToPigLatin(char Word[])
 {
 	char result[MAX_WORD_LENGTH];
 	if(isVowel(Word[0]))
@@ -49,7 +59,7 @@ void TranslateWordToPigLatin(char Word[])
 	}
 	else
 	{
-		int consonantCount = CountLeadingConsonants(Word);
+		int consonantCount = countLeadingConsonants(Word);
 		strcpy(result, Word + consonantCount);
 		strcat(result,Word);
 		result[strlen(Word)] = '\0';		
@@ -58,24 +68,24 @@ void TranslateWordToPigLatin(char Word[])
 	}
 }
 
-void TranslateToPigLatin(char Phrase[])
+void translateToPigLatin(char phrase[])
 {
 	char answer[MAX_PHRASE_LENGTH] = "";
 	char word[MAX_WORD_LENGTH];
 	int wordIndex = 0;
-	for(int i = 0; i <= strlen(Phrase);i++)
+	for(int i = 0; i <= strlen(phrase);i++)
 	{
-		if(Phrase[i] != ' ' && Phrase[i] != '\0')
+		if(phrase[i] != ' ' && phrase[i] != '\0')
 		{
-			word[wordIndex] = Phrase[i];
+			word[wordIndex] = phrase[i];
 			wordIndex++;
 		}
 		else
 		{
-			//reached the end of a word in the Phrase
+			//reached the end of a word in the phrase
 			word[wordIndex] = '\0';
 			wordIndex = 0;
-			TranslateWordToPigLatin(word);
+			translateWordToPigLatin(word);
 			strcat(answer,word);
 			strcat(answer," ");
 		}
@@ -83,5 +93,5 @@ void TranslateToPigLatin(char Phrase[])
 	}
 
 
-	strcpy(Phrase,answer);
+	strcpy(phrase,answer);
 }

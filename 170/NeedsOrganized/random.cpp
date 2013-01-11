@@ -1,12 +1,14 @@
+//this program rolls a pair of dice 20 times
+
 #include<iostream>
-#include<stdlib.h>
+#include<cstdlib>
 #include<time.h>
-#include<conio.h>
 
 using std::cout;
 using std::endl;
+using std::cin;
 
-void main()
+int main()
 {
 	int DieOne;
 	int DieTwo;
@@ -15,13 +17,13 @@ void main()
 
 	for (int i = 0; i < 20; i++)
 	{
-		DieOne = (rand()% 6) + 1;
-		DieTwo = (rand()% 6) + 1;
+		DieOne = (rand()% 6) + 1; //use the modulus (%) operator to
+		DieTwo = (rand()% 6) + 1; // set limits on your random number
 
-		cout << "Die One is " << DieOne << " ";
+		cout << "Die One is " << DieOne << ", ";
 		cout << "Die Two is " << DieTwo << endl;
-		
-		_getch();
-		system("cls");
 	}
+   
+   cin.get();
+   return 0;
 }
