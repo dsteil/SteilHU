@@ -6,6 +6,9 @@
 #if !defined(_WIN32) && !defined (_MSC_VER)
 #define stricmp strcasecmp
 #endif
+//the above compiler directives allow this program
+// to be compiled on a Linux machine. strcasecmp()
+// is the Linux-friendly version of stricmp().
 	
 #include<iostream>
 #include<cstring>

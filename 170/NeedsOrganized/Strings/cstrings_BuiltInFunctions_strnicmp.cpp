@@ -4,6 +4,12 @@
 	//note the 'n' and the 'i'
 	//don't make the mistake of switching the 'i' and the 'n'. strincmp() does not exist.
 	
+#if !defined(_WIN32) && !defined (_MSC_VER)
+#define strnicmp strncasecmp
+#endif
+//the above compiler directives allow this program
+// to be compiled on a Linux machine. strncasecmp()
+// is the Linux-friendly version of stricmp().
 
 #include<iostream>
 #include<cstring>
