@@ -1,7 +1,9 @@
 #include<iostream>
 #include<string>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 void InputOutput();
 void InputOutput2();
@@ -9,13 +11,16 @@ void Assignment();
 void Concatenation();
 void Contains();
 
-void main()
+int main()
 {
 //	InputOutput();
 	InputOutput2();
 //	Assignment();
 //	Concatenation();
 //	Contains();
+
+   cin.get();
+   return 0;
 }
 
 void InputOutput()
