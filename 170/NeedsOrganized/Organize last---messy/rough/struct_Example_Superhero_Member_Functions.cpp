@@ -1,7 +1,11 @@
+//placed in "rough" because struct_Arkansan.cpp teaches these things
+
 #include<iostream>
 #include<string>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 struct Height_Type
 {
@@ -82,10 +86,13 @@ void SuperHero_Type::display()
 	Height.display();
 }
 
-void main()
+int main()
 {
 	SuperHero_Type SuperHero;
 
 	SuperHero.get();
 	SuperHero.display();
+   
+   cin.get();
+   return 0;
 }

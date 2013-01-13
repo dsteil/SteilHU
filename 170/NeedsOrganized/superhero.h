@@ -1,7 +1,15 @@
-#ifndef SUPER_HERO_H
-#define SUPER_HERO_H
+//this is an example of a header file.
+//header files make your code tidier and more accessible.
+//they should contain your definitions and your implementations.
 
-#include"Height.h"
+//ALL this code is essentially inserted by the compiler
+// wherever there is #include "superhero.h"
+
+//these are compiler directives. They are not executed at runtime
+#ifndef SUPER_HERO_H //if SUPER_HERO_H has not been defined then continue...
+#define SUPER_HERO_H //define SUPER_HERO_H. (SUPER_HERO_H is now defined)
+
+//continuing...
 
 const int MAX_NAME_LENGTH = 30;
 
@@ -43,4 +51,5 @@ struct CSuperHero
 
 };
 
-#endif
+#endif //you don't want anything after this in your header file.
+//We jump from line 9 to 54 if SUPER_HERO_H had already been defined

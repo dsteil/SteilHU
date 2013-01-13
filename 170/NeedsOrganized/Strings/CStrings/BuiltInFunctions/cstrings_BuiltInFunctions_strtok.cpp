@@ -15,7 +15,7 @@ int main()
 	char result[100] = "";
 	char temp[100] = "";
 
-	cout << "Enter a several words: ";
+	cout << "Enter several words: ";
    cin.getline(original, 100);
 
 	char* token = strtok(original," ");

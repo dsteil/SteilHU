@@ -1,5 +1,6 @@
 //strtok_s() parses for a token just as strtok() does, except
-// there is no bounds checking.
+// there is no bounds checking. Like the other "_s" functions,
+// it is Microsoft-specific.
 
 #include<iostream>
 #include<cstring>
@@ -12,7 +13,9 @@ int main()
 {
 	char s1[100];
 	char s2[100] = "";
-	cin.getline(s1,100);
+	
+   cout << "Enter several words: ";
+   cin.getline(s1,100);
 	
 	char* nextToken;
 	char* token;

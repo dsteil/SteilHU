@@ -1,8 +1,14 @@
 #include<iostream>
-#include<string>
 #include<fstream>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::ios;
+using std::string;
+using std::fstream;
+using std::ofstream;
+using std::ifstream;
 
 const int SEARCH = 1;
 const int ADD = 2;
@@ -53,7 +59,7 @@ void DisplayEntry(const CEntry& Entry)
 	cout << Entry.Age << endl << endl;
 }
 
-void main()
+int main()
 {
 	cout << ios::app << endl;
 	cout << ios::in << endl;
@@ -83,6 +89,9 @@ void main()
 
 	}
 	while(UserSelection != EXIT);
+   
+   cin.get();
+   return 0;
 }
 
 

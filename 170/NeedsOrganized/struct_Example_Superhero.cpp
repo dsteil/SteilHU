@@ -1,49 +1,69 @@
+//this program introduces user-defined types
+
 #include<iostream>
-#include<string>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
 
-struct SuperHeroType
+struct SuperHero  //definition
 {
-	string Name;
-	string Power;
-	string Transportation;
-	long Age;
-	double Weight;
+	string name;   
+	string power;
+	string transportation;  //these are called "member variables", or "members"
+	long age;               //these represent the "state" of the superhero
+	double weight;
+   string mood;
 };
 
-void Get(SuperHeroType& SuperHero);
-void Show(SuperHeroType& SuperHero);
+void get(SuperHero& superHero);
+void show(SuperHero& superHero);
+void makeSad(SuperHero& superHero);
 
-void main()
+int main()
 {
-	SuperHeroType SuperHero;
+	SuperHero myHero; //declaration
 
-	Get(SuperHero);
-	Show(SuperHero);
+	get(myHero);
+   makeSad(myHero); //state can be changed
+	show(myHero);
+   
+   cin.get();
+   return 0;
 }
 
-void Get(SuperHeroType& SuperHero)
+void get(SuperHero& superHero)
 {
-	cout << "Name? ";
-	getline(cin,SuperHero.Name);
+	cout << "name? ";
+	getline(cin,superHero.name);  //use the '.' operator to access members of a struct
 	cout << "Power? ";
-	getline(cin,SuperHero.Power);
-	cout << "Mode of Transportation? ";
-	getline(cin,SuperHero.Transportation);
-	cout << "Age? ";
-	cin >> SuperHero.Age;
-	cout << "Weight? ";
-	cin >> SuperHero.Weight;
+	getline(cin,superHero.power);
+	cout << "Mode of transportation? ";
+	getline(cin,superHero.transportation);
+	cout << "age? ";
+	cin >> superHero.age;
+	cout << "weight? ";
+	cin >> superHero.weight;
+   cout << "mood? ";
+	cin >> superHero.mood;
 }
 
-void Show(SuperHeroType& SuperHero)
+void makeSad(SuperHero& superHero)
 {
-	cout << "Name: " << SuperHero.Name << endl;
-	cout << "Power: "<< SuperHero.Power << endl;
-	cout << "Mode of Transportation: " << SuperHero.Transportation << endl;
-	cout << "Age: " << SuperHero.Age << endl;
-	cout << "Weight: " << SuperHero.Weight << endl;
+   cout << endl << "Making hero sad..." << endl;
+   superHero.mood = "Sad";
+}
+
+void show(SuperHero& superHero)
+{
+	cout << endl;
+   cout << "name: " << superHero.name << endl;
+   cout << "Power: "<< superHero.power << endl;
+	cout << "Mode of transportation: " << superHero.transportation << endl;
+	cout << "age: " << superHero.age << endl;
+	cout << "weight: " << superHero.weight << endl;
+    cout << "mood: " << superHero.mood << endl;
 }
 
 

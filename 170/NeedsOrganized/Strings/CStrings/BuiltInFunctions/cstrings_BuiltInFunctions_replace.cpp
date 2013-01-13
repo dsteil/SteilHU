@@ -10,7 +10,7 @@ using std::string;
 
 //4.	Complete the following function.  It should replace all of the 
 //		occurrences of the string s2 in the string s1 with string the s3. (10 points)
-void replace(string& s1, const string& s2, const string& s3)
+void replaceContents(string& s1, const string& s2, const string& s3)
 {
 	int index = (int)s1.find(s2); 
 
@@ -25,7 +25,7 @@ void replace(string& s1, const string& s2, const string& s3)
 int main()
 {
 	string s = "This cow is cow a cow test cow";
-	replace(s,"cow","Bunny");
+	replaceContents(s,"cow","Bunny");
 
 	cout << s;
    
