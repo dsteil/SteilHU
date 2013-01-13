@@ -1,30 +1,33 @@
+//this program uses the cin.getline() function
+
 #include<iostream>
-using namespace std;
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 void GetLineExample()
 {
 	char s[20];
-	char s2[20];
-
 	//cin.get(s,20);
-	//cin.get();
+	//cin.ignore(); //with cin.get() you have to manually remove
+                //   the carriage return character at left in the buffer
 
-	//cin.get(s2,20);
-	//cin.get();
-
-	//Use getline to automaticaly remove the end of line
+	cout << "Enter a string: ";
+   cin.getline(s,20);
+   //Use getline to automaticaly remove the end of line
 	//character from the input buffer.
-
-	//getline like get will get white space and has bounds checking	
-	cin.getline(s,20);
-	cin.getline(s2,20);
-
+   cin.getline(s,20);
+	//getline, like get, will get white space and has bounds checking	
+	
 	cout << s << endl;
-	cout << s2 << endl;
 }
 
 
-void main()
+int main()
 {
 	GetLineExample();
+   
+   cin.get();
+   return 0;
 }

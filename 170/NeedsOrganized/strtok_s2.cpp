@@ -1,7 +1,14 @@
-#include<iostream>
-using namespace std;
+//strtok_s() parses for a token just as strtok() does, except
+// there is no bounds checking.
 
-void main()
+#include<iostream>
+#include<cstring>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
 {
 	char s1[100];
 	char s2[100] = "";
@@ -21,5 +28,8 @@ void main()
 	while (token != NULL);
 
 	cout << s2 << endl;
+   
+   cin.get();
+   return 0;
 }
 

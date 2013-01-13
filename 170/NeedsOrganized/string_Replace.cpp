@@ -1,11 +1,16 @@
-#include<iostream>
-#include<string>
+//this program replaces contents of a string with
+// something else
 
-using namespace std;
+#include<iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
 
 //4.	Complete the following function.  It should replace all of the 
 //		occurrences of the string s2 in the string s1 with string the s3. (10 points)
-void Replace(string& s1, const string&s2, const string& s3)
+void replace(string& s1, const string& s2, const string& s3)
 {
 	int index = (int)s1.find(s2); 
 
@@ -17,10 +22,13 @@ void Replace(string& s1, const string&s2, const string& s3)
 }
 
 
-void main()
+int main()
 {
 	string s = "This cow is cow a cow test cow";
-	Replace(s,"cow","Bunny");
+	replace(s,"cow","Bunny");
 
-	cout << s << endl;
+	cout << s;
+   
+   cin.get();
+   return 0;
 }
